@@ -1,7 +1,7 @@
 {
   "api": [
     {
-      "name": "SearXNG Search（开发环境）",
+      "name": "searxngSearch",
       "url": "http://localhost:3400/api/search",
       "description": "使用 SearXNG 进行搜索的开源元搜索引擎",
       "parameters": {
@@ -24,10 +24,12 @@
           },
           "safesearch": {
             "description": "安全搜索级别（0, 1, 2）",
+            "enum": [0, 1, 2],
             "type": "number"
           },
           "time_range": {
             "description": "搜索时间范围（day, month, year）",
+            "enum": ["day", "month", "year"],
             "type": "string"
           }
         },
@@ -37,11 +39,11 @@
     }
   ],
   "gateway": "http://localhost:3400/api/gateway",
-  "identifier": "searxng-search-dev",
+  "identifier": "searxng-search",
   "meta": {
     "avatar": "https://raw.githubusercontent.com/searxng/searxng/master/src/brand/searxng-wordmark.svg",
     "tags": ["web", "search", "metasearch"],
-    "title": "SearXNG Search（开发环境）",
+    "title": "SearXNG Search",
     "description": "使用 SearXNG 进行隐私友好的元搜索"
   },
   "settings": {
@@ -50,7 +52,7 @@
     "properties": {
       "SEARXNG_INSTANCE_URL": {
         "title": "SearXNG Instance URL",
-        "description": "您的 SearXNG 实例的 URL（开发环境）",
+        "description": "您的 SearXNG 实例的 URL",
         "type": "string",
         "format": "url"
       }

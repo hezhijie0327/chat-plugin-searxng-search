@@ -1,8 +1,7 @@
 {
-  "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "name": "SearXNG Search",
+      "name": "searxngSearch",
       "url": "https://lobechat-chat-plugin-searxng.vercel.app/api/search",
       "description": "使用 SearXNG 进行搜索的开源元搜索引擎",
       "parameters": {
@@ -25,10 +24,12 @@
           },
           "safesearch": {
             "description": "安全搜索级别（0, 1, 2）",
+            "enum": [0, 1, 2],
             "type": "number"
           },
           "time_range": {
             "description": "搜索时间范围（day, month, year）",
+            "enum": ["day", "month", "year"],
             "type": "string"
           }
         },
@@ -37,6 +38,7 @@
       }
     }
   ],
+  "gateway": "https://lobechat-chat-plugin-searxng.vercel.app/api/gateway",
   "author": "hezhijie0327",
   "homepage": "https://github.com/hezhijie0327/lobechat-chat-plugin-searxng",
   "identifier": "searxng-search",
