@@ -23,7 +23,7 @@ export default async (req: Request) => {
     const { q, language, time_range, safesearch, categories, engines} = (await req.json()) as SearchParameters;
 
     if (!q) {
-      return createErrorResponse(PluginErrorType.PluginRequestParameterInvalid, {
+      return createErrorResponse(PluginErrorType.PluginApiParamsError, {
         message: 'Search query (q) is required.',
       });
     }
@@ -39,17 +39,26 @@ export default async (req: Request) => {
       ...(categories && { categories }),
       ...(engines && { engines }),
     };
+
     const searxngUrl = settings.SEARXNG_INSTANCE_URL;
 
     console.log('SearxNG Instance URL:', searxngUrl);
     console.log('Search Parameters:', searchParameters);
+
+    // Convert searchParameters to string values
+    const searchParams = new URLSearchParams(
+      Object.entries(searchParameters).reduce<Record<string, string>>((acc, [key, value]) => {
+        acc[key] = typeof value === 'string' ? value : JSON.stringify(value);
+        return acc;
+      }, {})
+    ).toString();
 
     const response = await fetch(`${searxngUrl}/search`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: new URLSearchParams(searchParameters as Record<string, string>).toString(),
+      body: searchParams,
     });
 
     if (!response.ok) {
