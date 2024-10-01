@@ -22,6 +22,12 @@ export default async (req: Request) => {
   try {
     const { q, language, time_range, safesearch, categories, engines} = (await req.json()) as SearchParameters;
 
+    if (!q) {
+      return createErrorResponse(PluginErrorType.PluginRequestParameterInvalid, {
+        message: 'Search query (q) is required.',
+      });
+    }
+
     const searchParameters: SearchParameters = {
       q,
       format: 'json',
