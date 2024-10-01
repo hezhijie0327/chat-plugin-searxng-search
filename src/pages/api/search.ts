@@ -20,20 +20,20 @@ export default async (req: Request) => {
     });
 
   try {
-    const { q, language, time_range} = (await req.json()) as SearchParameters;
+    const { language, q, time_range} = (await req.json()) as SearchParameters;
 
     const searxngUrl = settings.SEARXNG_INSTANCE_URL;
     console.log('SearXNG Instance URL:', searxngUrl);
 
     const searchParameters: SearchParameters = {
-      q,
       format: 'json',
       language: language ?? 'en-US',
-      time_range: time_range ?? 'month',
-      pageno: 1,
       max_results: 5,
+      pageno: 1,
+      q,
+      time_range: time_range ?? 'month',
     };
-    console.log('Search Parameters:', searchParameters);
+    console.log('Search Parameters:', searchParams);
 
     const searchParams = new URLSearchParams(
       Object.entries(searchParameters).reduce<Record<string, string>>((acc, [key, value]) => {
@@ -41,14 +41,14 @@ export default async (req: Request) => {
         return acc;
       }, {})
     ).toString();
-    console.log('Search Parameters:', searchParams);
+    console.log('Search URL:', searxngUrl + '?' + searchParams);
 
     const response = await fetch(searxngUrl, {
-      method: 'POST',
+      body: searchParams,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: searchParams,
+      method: 'POST',
     });
 
     let results = (await response.json()) as SearchResponse;
