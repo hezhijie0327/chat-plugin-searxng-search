@@ -42,6 +42,8 @@ export default async (req: Request) => {
 
     const searxngUrl = settings.SEARXNG_INSTANCE_URL;
 
+    console.log('SearXNG Instance URL:', searxngUrl);
+
     // Convert searchParameters to string values
     const searchParams = new URLSearchParams(
       Object.entries(searchParameters).reduce<Record<string, string>>((acc, [key, value]) => {
@@ -49,6 +51,8 @@ export default async (req: Request) => {
         return acc;
       }, {})
     ).toString();
+
+    console.log('Search Parameters:', searchParameters);
 
     const response = await fetch(`${searxngUrl}/search`, {
       method: 'POST',
