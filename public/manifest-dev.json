@@ -1,9 +1,8 @@
 {
   "api": [
     {
-      "name": "searxngSearch",
-      "url": "http://localhost:3400/api/search",
       "description": "使用 SearXNG 进行搜索的开源元搜索引擎",
+      "name": "searxngSearch",
       "parameters": {
         "properties": {
           "language": {
@@ -15,37 +14,50 @@
             "type": "string"
           },
           "time_range": {
-            "description": "搜索时间范围（day, month, year）",
-            "enum": ["day", "month", "year"],
+            "description": "搜索的时间范围",
+            "enum": [
+              "day",
+              "month",
+              "year"
+            ],
             "type": "string"
           }
         },
-        "required": ["q"],
+        "required": [
+          "q"
+        ],
         "type": "object"
-      }
+      },
+      "url": "http://localhost:3400/api/search"
     }
   ],
-  "gateway": "http://localhost:3400/api/gateway",
   "author": "hezhijie0327",
+  "gateway": "http://localhost:3400/api/gateway",
   "homepage": "https://github.com/hezhijie0327/lobechat-chat-plugin-searxng",
   "identifier": "searxng-search",
   "meta": {
     "avatar": "https://raw.githubusercontent.com/searxng/searxng/master/src/brand/searxng-wordmark.svg",
-    "tags": ["web", "search", "metasearch"],
-    "title": "SearXNG Search",
-    "description": "使用 SearXNG 进行隐私友好的元搜索"
+    "description": "使用 SearXNG 进行隐私友好的元搜索",
+    "tags": [
+      "web",
+      "search",
+      "metasearch"
+    ],
+    "title": "SearXNG Search"
   },
   "settings": {
-    "type": "object",
-    "required": ["SEARXNG_INSTANCE_URL"],
     "properties": {
       "SEARXNG_INSTANCE_URL": {
-        "title": "SearXNG Instance URL",
         "description": "您的 SearXNG 实例的 URL",
-        "type": "string",
-        "format": "url"
+        "format": "url",
+        "title": "SearXNG Instance URL",
+        "type": "string"
       }
-    }
+    },
+    "required": [
+      "SEARXNG_INSTANCE_URL"
+    ],
+    "type": "object"
   },
   "version": "1"
 }
