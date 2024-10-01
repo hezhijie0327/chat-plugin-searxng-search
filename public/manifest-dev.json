@@ -6,14 +6,6 @@
       "description": "使用 SearXNG 进行搜索的开源元搜索引擎",
       "parameters": {
         "properties": {
-          "categories": {
-            "description": "搜索的类别",
-            "type": "string"
-          },
-          "engines": {
-            "description": "指定引擎进行搜索",
-            "type": "string"
-          },
           "language": {
             "description": "搜索语言",
             "type": "string"
@@ -21,11 +13,6 @@
           "q": {
             "description": "搜索的文本内容",
             "type": "string"
-          },
-          "safesearch": {
-            "description": "安全搜索级别（0, 1, 2）",
-            "enum": [0, 1, 2],
-            "type": "number"
           },
           "time_range": {
             "description": "搜索时间范围（day, month, year）",
