@@ -6,7 +6,6 @@
   "homepage": "https://github.com/hezhijie0327/lobechat-chat-plugin-searxng",
   "repository": "https://github.com/hezhijie0327/lobechat-chat-plugin-searxng.git",
   "workspaces": [
-    "docs/*",
     "./*"
   ],
   "scripts": {
