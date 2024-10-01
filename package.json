@@ -9,6 +9,7 @@
     "./*"
   ],
   "scripts": {
+    "build": "next build",
     "dev": "next dev -p 3400",
     "start": "next start"
   },
