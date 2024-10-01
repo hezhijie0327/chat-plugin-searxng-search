@@ -20,8 +20,8 @@ export default async (req: Request) => {
     });
 
   try {
-    const { q, language, time_range, safesearch } = (await req.json()) as SearchParameters;
-    
+    const { q, language, time_range, safesearch, categories, engines} = (await req.json()) as SearchParameters;
+
     if (!q) {
       return createErrorResponse(PluginErrorType.PluginRequestParameterInvalid, {
         message: 'Search query (q) is required.',
@@ -35,9 +35,12 @@ export default async (req: Request) => {
       time_range: time_range ?? 'month',
       safesearch: safesearch ?? 0,
       pageno: 1,
-      max_results: 5, // Set to 5 to limit results
+      max_results: 5,
+      ...(categories && { categories }),
+      ...(engines && { engines }),
     };
     const searxngUrl = settings.SEARXNG_INSTANCE_URL;
+
     console.log('SearxNG Instance URL:', searxngUrl);
     console.log('Search Parameters:', searchParameters);
 
@@ -48,16 +51,15 @@ export default async (req: Request) => {
       },
       body: new URLSearchParams(searchParameters as Record<string, string>).toString(),
     });
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
+
     let results = (await response.json()) as SearchResponse;
 
     // Limit the results to 5
     results.results = results.results.slice(0, 5);
-    results.number_of_results = Math.min(results.number_of_results, 5);
 
     return new Response(JSON.stringify(results));
   } catch (error) {
