@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "dev": "next dev -p 3400",
-    "start": "next start",
+    "start": "next start"
   },
   "browserslist": [
     "> 1%",
