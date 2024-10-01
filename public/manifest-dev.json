@@ -1,7 +1,7 @@
 {
   "api": [
     {
-      "name": "SearXNG Search",
+      "name": "SearXNG Search（开发环境）",
       "url": "http://localhost:3400/api/search",
       "description": "使用 SearXNG 进行搜索的开源元搜索引擎",
       "parameters": {
@@ -41,7 +41,7 @@
   "meta": {
     "avatar": "https://raw.githubusercontent.com/searxng/searxng/master/src/brand/searxng-wordmark.svg",
     "tags": ["web", "search", "metasearch"],
-    "title": "SearXNG Search",
+    "title": "SearXNG Search（开发环境）",
     "description": "使用 SearXNG 进行隐私友好的元搜索"
   },
   "settings": {
