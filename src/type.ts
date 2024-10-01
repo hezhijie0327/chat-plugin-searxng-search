@@ -20,6 +20,6 @@ export interface SearchResponse {
 }
 
 export interface Settings {
-  MAX_RESULTS: number;
   SEARXNG_INSTANCE_URL: string;
+  SEARXNG_MAX_RESULTS: number;
 }
