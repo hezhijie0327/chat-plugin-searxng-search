@@ -3,11 +3,8 @@ export interface SearchParameters {
   format?: string;
   language?: string;
   time_range?: string;
-  safesearch?: number;
   pageno?: number;
   max_results?: number;
-  categories?: string;
-  engines?: string;
 }
 
 export interface SearchResult {
