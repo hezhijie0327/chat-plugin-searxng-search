@@ -9,5 +9,5 @@ export default async (req: Request) => {
     return createGatewayOnEdgeRuntime()(req);
   }
 
-  return new Response('SearxNG gateway');
+  return new Response('LobeChat SearXNG Search Plugin Gateway');
 };
