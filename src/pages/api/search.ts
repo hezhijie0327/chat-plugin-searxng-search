@@ -33,7 +33,7 @@ export default async (req: Request) => {
       q,
       time_range: time_range ?? 'month',
     };
-    console.log('Search Parameters:', searchParams);
+    console.log('Search Parameters:', searchParameters);
 
     const searchParams = new URLSearchParams(
       Object.entries(searchParameters).reduce<Record<string, string>>((acc, [key, value]) => {
@@ -41,7 +41,7 @@ export default async (req: Request) => {
         return acc;
       }, {})
     ).toString();
-    //console.log('Search URL:', searxngUrl, '?', searchParams);
+    console.log('Search URL:', searxngUrl, '?', searchParams);
 
     const response = await fetch(searxngUrl, {
       body: searchParams,
