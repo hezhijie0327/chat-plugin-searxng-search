@@ -25,10 +25,12 @@ export default async (req: Request) => {
     const searxngUrl = settings.SEARXNG_INSTANCE_URL;
     console.log('SearXNG Instance URL:', searxngUrl);
 
+    const max_results = settings.SEARXNG_MAX_RESULTS || 5;
+    console.log('Max Results:', max_results);
+
     const searchParameters: SearchParameters = {
       format: 'json',
       language: language ?? 'en-US',
-      max_results: 5,
       pageno: 1,
       q,
       time_range: time_range ?? 'month',
@@ -53,8 +55,9 @@ export default async (req: Request) => {
 
     let results = (await response.json()) as SearchResponse;
 
-    // Limit the results to 5
-    results.results = results.results.slice(0, 5);
+    // Limit the results to max_results
+    results.results = results.results.slice(0, max_results);
+    console.log('Search Results:', results.results)
 
     return new Response(JSON.stringify(results));
   } catch (error) {

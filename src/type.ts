@@ -1,7 +1,6 @@
 export interface SearchParameters {
   format?: string;
   language?: string;
-  max_results?: number;
   pageno?: number;
   q: string;
   time_range?: string;
@@ -22,4 +21,5 @@ export interface SearchResponse {
 
 export interface Settings {
   SEARXNG_INSTANCE_URL: string;
+  SEARXNG_MAX_RESULTS: number;
 }

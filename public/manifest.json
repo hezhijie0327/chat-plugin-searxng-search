@@ -53,6 +53,12 @@
         "format": "url",
         "title": "SearXNG Instance URL",
         "type": "string"
+      },
+      "SEARXNG_MAX_RESULTS": {
+        "description": "限制最大返回结果数量",
+        "format": "text",
+        "title": "SearXNG Max Results",
+        "type": "number"
       }
     },
     "required": [
