@@ -1,18 +1,18 @@
 export interface SearchParameters {
-  q: string;
   format?: string;
   language?: string;
-  time_range?: string;
-  pageno?: number;
   max_results?: number;
+  pageno?: number;
+  q: string;
+  time_range?: string;
 }
 
 export interface SearchResult {
-  url: string;
-  title: string;
   content: string;
   engine: string;
   score?: number;
+  title: string;
+  url: string;
 }
 
 export interface SearchResponse {
