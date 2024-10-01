@@ -3,7 +3,7 @@
   "api": [
     {
       "name": "SearXNG Search",
-      "url": "https://lobechat-chat-plugin-searxng.vercel.app/search",
+      "url": "https://lobechat-chat-plugin-searxng.vercel.app/api/search",
       "description": "使用 SearXNG 进行搜索的开源元搜索引擎",
       "parameters": {
         "properties": {
