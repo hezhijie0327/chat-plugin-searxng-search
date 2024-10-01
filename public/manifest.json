@@ -2,26 +2,34 @@
   "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "name": "searxng",
+      "name": "SearXNG Search",
       "url": "https://search.example.org/search",
-      "description": "使用 SearxNG 进行搜索的开源元搜索引擎",
+      "description": "使用 SearXNG 进行搜索的开源元搜索引擎",
       "parameters": {
         "properties": {
-          "q": {
-            "description": "搜索的文本内容",
+          "categories": {
+            "description": "搜索的类别",
+            "type": "string"
+          },
+          "engines": {
+            "description": "指定引擎进行搜索",
             "type": "string"
           },
           "language": {
             "description": "搜索语言",
             "type": "string"
           },
-          "time_range": {
-            "description": "搜索时间范围",
+          "q": {
+            "description": "搜索的文本内容",
             "type": "string"
           },
           "safesearch": {
-            "description": "安全搜索级别",
+            "description": "安全搜索级别（0, 1, 2）",
             "type": "number"
+          },
+          "time_range": {
+            "description": "搜索时间范围（day, month, year）",
+            "type": "string"
           }
         },
         "required": ["q"],
@@ -35,16 +43,16 @@
   "meta": {
     "avatar": "https://raw.githubusercontent.com/searxng/searxng/master/src/brand/searxng-wordmark.svg",
     "tags": ["web", "search", "metasearch"],
-    "title": "SearxNG Search",
-    "description": "使用 SearxNG 进行隐私友好的元搜索"
+    "title": "SearXNG Search",
+    "description": "使用 SearXNG 进行隐私友好的元搜索"
   },
   "settings": {
     "type": "object",
     "required": ["SEARXNG_INSTANCE_URL"],
     "properties": {
       "SEARXNG_INSTANCE_URL": {
-        "title": "SearxNG Instance URL",
-        "description": "您的 SearxNG 实例的 URL（需启用 JSON 结果）",
+        "title": "SearXNG Instance URL",
+        "description": "您的 SearXNG 实例的 URL",
         "type": "string",
         "format": "url"
       }

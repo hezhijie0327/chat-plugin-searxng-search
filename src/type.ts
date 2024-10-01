@@ -6,6 +6,8 @@ export interface SearchParameters {
   safesearch?: number;
   pageno?: number;
   max_results?: number;
+  categories?: string;
+  engines?: string;
 }
 
 export interface SearchResult {
@@ -18,13 +20,7 @@ export interface SearchResult {
 
 export interface SearchResponse {
   query: string;
-  number_of_results: number;
   results: SearchResult[];
-  answers: string[];
-  corrections: string[];
-  infoboxes: any[];
-  suggestions: string[];
-  unresponsive_engines: string[];
 }
 
 export interface Settings {
