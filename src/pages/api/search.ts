@@ -35,7 +35,7 @@ export default async (req: Request) => {
     };
     console.log('Search Parameters:', searchParameters);
 
-    const response = await fetch(`${searxngUrl}/search`, {
+    const response = await fetch(searxngUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
