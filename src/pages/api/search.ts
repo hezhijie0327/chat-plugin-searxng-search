@@ -25,7 +25,7 @@ export default async (req: Request) => {
     const searxngUrl = settings.SEARXNG_INSTANCE_URL;
     console.log('SearXNG Instance URL:', searxngUrl);
 
-    const max_results = settings.MAX_RESULTS || 5;
+    const max_results = settings.SEARXNG_MAX_RESULTS || 5;
     console.log('Max Results:', max_results);
 
     const searchParameters: SearchParameters = {
