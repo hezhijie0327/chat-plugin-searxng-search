@@ -20,7 +20,7 @@ export default async (req: Request) => {
     });
 
   try {
-    const { q, language, time_range, safesearch, categories, engines} = (await req.json()) as SearchParameters;
+    const { q, language, time_range} = (await req.json()) as SearchParameters;
 
     const searxngUrl = settings.SEARXNG_INSTANCE_URL;
     console.log('SearXNG Instance URL:', searxngUrl);
@@ -30,11 +30,8 @@ export default async (req: Request) => {
       format: 'json',
       language: language ?? 'en-US',
       time_range: time_range ?? 'month',
-      safesearch: safesearch ?? 0,
       pageno: 1,
       max_results: 5,
-      ...(categories && { categories }),
-      ...(engines && { engines }),
     };
     console.log('Search Parameters:', searchParameters);
 
