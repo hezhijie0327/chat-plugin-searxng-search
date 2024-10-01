@@ -41,7 +41,7 @@ export default async (req: Request) => {
         return acc;
       }, {})
     ).toString();
-    console.log('Search URL:', searxngUrl + '?' + searchParams);
+    console.log('Search URL:', searxngUrl, '?', searchParams);
 
     const response = await fetch(searxngUrl, {
       body: searchParams,
