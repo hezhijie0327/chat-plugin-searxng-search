@@ -35,12 +35,20 @@ export default async (req: Request) => {
     };
     console.log('Search Parameters:', searchParameters);
 
+    const searchParams = new URLSearchParams(
+      Object.entries(searchParameters).reduce<Record<string, string>>((acc, [key, value]) => {
+        acc[key] = typeof value === 'string' ? value : JSON.stringify(value);
+        return acc;
+      }, {})
+    ).toString();
+    console.log('Search Parameters:', searchParams);
+
     const response = await fetch(searxngUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: JSON.stringify(searchParameters),
+      body: searchParams,
     });
 
     let results = (await response.json()) as SearchResponse;
