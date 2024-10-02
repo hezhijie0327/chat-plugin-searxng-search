@@ -80,8 +80,7 @@
       }
     },
     "required": [
-      "SEARXNG_INSTANCE_URL",
-      "SEARXNG_MAX_RESULTS"
+      "SEARXNG_INSTANCE_URL"
     ],
     "type": "object"
   },
