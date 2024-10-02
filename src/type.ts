@@ -21,5 +21,5 @@ export interface SearchResponse {
 
 export interface Settings {
   SEARXNG_INSTANCE_URL: string;
-  SEARXNG_MAX_RESULTS: number;
+  SEARXNG_MAX_RESULTS?: number;
 }
