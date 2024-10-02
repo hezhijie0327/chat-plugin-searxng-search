@@ -1,5 +1,4 @@
 {
-  "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
       "description": "使用 SearXNG 进行搜索的开源元搜索引擎",
@@ -62,7 +61,8 @@
       }
     },
     "required": [
-      "SEARXNG_INSTANCE_URL"
+      "SEARXNG_INSTANCE_URL",
+      "SEARXNG_MAX_RESULTS"
     ],
     "type": "object"
   },
