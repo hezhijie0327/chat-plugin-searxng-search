@@ -1,5 +1,4 @@
 {
-  "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
       "description": "使用 SearXNG 进行搜索的开源元搜索引擎",
@@ -7,7 +6,7 @@
       "parameters": {
         "properties": {
           "language": {
-            "description": "搜索语言",
+            "description": "搜索的首选语言",
             "type": "string"
           },
           "q": {
@@ -15,7 +14,7 @@
             "type": "string"
           },
           "time_range": {
-            "description": "搜索的时间范围",
+            "description": "搜索结果的时间范围",
             "enum": [
               "day",
               "month",
@@ -62,7 +61,8 @@
       }
     },
     "required": [
-      "SEARXNG_INSTANCE_URL"
+      "SEARXNG_INSTANCE_URL",
+      "SEARXNG_MAX_RESULTS"
     ],
     "type": "object"
   },
