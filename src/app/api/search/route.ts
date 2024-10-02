@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     console.log('SearXNG Instance URL:', searxngUrl);
 
     const engines = settings.SEARXNG_ENGINE_LIST ?? '';
-    console.log('Engine List:', max_results);
+    console.log('Engine List:', engines);
 
     const max_results = settings.SEARXNG_MAX_RESULTS ?? 5;
     console.log('Max Results:', max_results);
