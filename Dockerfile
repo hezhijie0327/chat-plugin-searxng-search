@@ -35,4 +35,4 @@ EXPOSE 3000/tcp
 
 CMD \
     cat "/app/public/manifest-dev.json" | sed "s|http://localhost:3000|${PRODUCTION_URL:-http://localhost:3000}|g" > "/app/public/manifest.json"; \
-    && npm run start
+    npm run start
