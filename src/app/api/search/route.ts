@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     });
 
   try {
-    const { language, q, time_range } = (await req.json()) as SearchParameters;
+    const { categories, engines, language, q, time_range } = (await req.json()) as SearchParameters;
     const searxngUrl = settings.SEARXNG_INSTANCE_URL;
     if (!searxngUrl)
       return createErrorResponse(PluginErrorType.PluginSettingsInvalid, {
@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
       });
     console.log('SearXNG Instance URL:', searxngUrl);
 
-    const max_results = settings.SEARXNG_MAX_RESULTS;
+    const max_results = settings.SEARXNG_MAX_RESULTS ?? 5;
     if (!max_results)
       return createErrorResponse(PluginErrorType.PluginSettingsInvalid, {
         message: 'SEARXNG_MAX_RESULTS not found in plugin settings.',
@@ -30,6 +30,8 @@ export async function POST(req: NextRequest) {
     console.log('Max Results:', max_results);
 
     const searchParameters: SearchParameters = {
+      categories: categories ?? 'general',
+      engines: engines ?? '',
       format: 'json',
       language: language ?? 'en-US',
       pageno: 1,
