@@ -4,7 +4,7 @@ import {
   createErrorResponse,
   getPluginSettingsFromRequest,
 } from '@lobehub/chat-plugin-sdk';
-import { SearchParameters, SearchResponse, Settings } from '@/type';
+import { SearchParameters, Settings } from '@/type';
 
 export async function POST(req: NextRequest) {
   const settings = getPluginSettingsFromRequest<Settings>(req);
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
       method: 'POST',
     });
 
-    let results = (await response.json()) as SearchResponse;
+    let results = await response.json();
     results.results = results.results.slice(0, max_results);
     console.log('Search Results:', results.results);
 
