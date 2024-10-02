@@ -21,11 +21,11 @@ export async function POST(req: NextRequest) {
       });
     console.log('SearXNG Instance URL:', searxngUrl);
 
-    const max_results = settings.SEARXNG_MAX_RESULTS ?? 5;
-    console.log('Max Results:', max_results);
-
     const engines = settings.SEARXNG_ENGINE_LIST ?? '';
     console.log('Engine List:', max_results);
+
+    const max_results = settings.SEARXNG_MAX_RESULTS ?? 5;
+    console.log('Max Results:', max_results);
 
     const { categories, language, q, time_range } = (await req.json()) as SearchParameters;
 
