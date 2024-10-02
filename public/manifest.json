@@ -28,11 +28,10 @@
         ],
         "type": "object"
       },
-      "url": "https://chat-plugin-searxng-search.zeabur.app/api/search"
+      "url": "https://chat-plugin-searxng-search.vercel.app/api/search"
     }
   ],
   "author": "hezhijie0327",
-  "gateway": "https://chat-plugin-searxng-search.zeabur.app/api/gateway",
   "homepage": "https://github.com/hezhijie0327/chat-plugin-searxng-search",
   "identifier": "searxng-search",
   "meta": {
@@ -49,13 +48,11 @@
     "properties": {
       "SEARXNG_INSTANCE_URL": {
         "description": "SearXNG 实例的 URL",
-        "format": "url",
         "title": "SearXNG Instance URL",
         "type": "string"
       },
       "SEARXNG_MAX_RESULTS": {
         "description": "限制最大返回结果数量",
-        "format": "text",
         "title": "SearXNG Max Results",
         "type": "number"
       }
