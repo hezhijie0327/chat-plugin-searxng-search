@@ -3,7 +3,11 @@ export const config = {
 };
 
 export default async (req: Request) => {
-  const { createGatewayOnEdgeRuntime } = await import('@lobehub/chat-plugins-gateway');
+  if (process.env.NODE_ENV === 'development') {
+    const { createGatewayOnEdgeRuntime } = await import('@lobehub/chat-plugins-gateway');
 
-  return createGatewayOnEdgeRuntime()(req);
+    return createGatewayOnEdgeRuntime()(req);
+  }
+
+  return new Response('SearXNG Search Plugin Gateway for LobeChat');
 };
