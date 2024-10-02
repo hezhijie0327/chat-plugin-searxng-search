@@ -49,13 +49,11 @@
     "properties": {
       "SEARXNG_INSTANCE_URL": {
         "description": "SearXNG 实例的 URL",
-        "format": "url",
         "title": "SearXNG Instance URL",
         "type": "string"
       },
       "SEARXNG_MAX_RESULTS": {
         "description": "限制最大返回结果数量",
-        "format": "text",
         "title": "SearXNG Max Results",
         "type": "number"
       }

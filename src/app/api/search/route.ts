@@ -1,18 +1,12 @@
+import { NextRequest, NextResponse } from "next/server";
 import {
   PluginErrorType,
   createErrorResponse,
   getPluginSettingsFromRequest,
 } from '@lobehub/chat-plugin-sdk';
-
 import { SearchParameters, SearchResponse, Settings } from '@/type';
 
-export const config = {
-  runtime: 'edge',
-};
-
-export default async (req: Request) => {
-  if (req.method !== 'POST') return createErrorResponse(PluginErrorType.MethodNotAllowed);
-
+export async function POST(req: NextRequest) {
   const settings = getPluginSettingsFromRequest<Settings>(req);
   if (!settings)
     return createErrorResponse(PluginErrorType.PluginSettingsInvalid, {
@@ -20,8 +14,7 @@ export default async (req: Request) => {
     });
 
   try {
-    const { language, q, time_range} = (await req.json()) as SearchParameters;
-
+    const { language, q, time_range } = (await req.json()) as SearchParameters;
     const searxngUrl = settings.SEARXNG_INSTANCE_URL;
     if (!searxngUrl)
       return createErrorResponse(PluginErrorType.PluginSettingsInvalid, {
@@ -62,13 +55,12 @@ export default async (req: Request) => {
     });
 
     let results = (await response.json()) as SearchResponse;
-
     // Limit the results to max_results
     results.results = results.results.slice(0, max_results);
-    console.log('Search Results:', results.results)
+    console.log('Search Results:', results.results);
 
-    return new Response(JSON.stringify(results));
+    return NextResponse.json(results);
   } catch (error) {
     return createErrorResponse(PluginErrorType.PluginServerError, error as object);
   }
-};
+}
