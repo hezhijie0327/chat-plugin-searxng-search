@@ -32,6 +32,7 @@
     }
   ],
   "author": "hezhijie0327",
+  "gateway": "https://chat-plugin-searxng-search.vercel.app/api/gateway",
   "homepage": "https://github.com/hezhijie0327/chat-plugin-searxng-search",
   "identifier": "searxng-search",
   "meta": {
