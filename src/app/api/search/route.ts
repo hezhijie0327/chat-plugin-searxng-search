@@ -54,8 +54,10 @@ export async function POST(req: NextRequest) {
     });
 
     let results = (await response.json()) as SearchResponse;
+
     // Limit the results to max_results
     results.results = results.results.slice(0, max_results);
+
     console.log('Search Results:', results.results);
 
     return NextResponse.json(results);
