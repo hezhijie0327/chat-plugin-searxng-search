@@ -1,4 +1,6 @@
 export interface SearchParameters {
+  categories?: string;
+  engines?: string;
   format?: string;
   language?: string;
   pageno?: number;
@@ -22,4 +24,5 @@ export interface SearchResponse {
 export interface Settings {
   SEARXNG_INSTANCE_URL: string;
   SEARXNG_MAX_RESULTS?: number;
+  SEARXNG_SEARCH_ENGINES?: string;
 }
