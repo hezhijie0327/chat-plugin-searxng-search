@@ -1,6 +1,5 @@
 export interface SearchParameters {
   categories?: string;
-  engines?: string;
   format?: string;
   language?: string;
   pageno?: number;
