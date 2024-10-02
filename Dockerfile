@@ -1,6 +1,10 @@
 FROM node:20-alpine
 
+ARG USE_CN_MIRROR
+
 ADD . /app
+
+WORKDIR /app
 
 RUN \
     if [ "${USE_CN_MIRROR:-false}" = "true" ]; then \
@@ -9,4 +13,7 @@ RUN \
     fi \
     && npm i
 
-CMD [ "npm", "run", "dev" ]
+EXPOSE 3000/tcp
+
+CMD \
+    npm run dev
