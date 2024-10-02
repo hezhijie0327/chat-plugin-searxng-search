@@ -28,7 +28,8 @@ COPY --from=app /app /app
 WORKDIR /app
 
 ENV PORT="3000" \
-    PRODUCTION_URL=""
+    PRODUCTION_URL="" \
+    SEARXNG_INSTANCE_URL=""
 
 EXPOSE 3000/tcp
 
