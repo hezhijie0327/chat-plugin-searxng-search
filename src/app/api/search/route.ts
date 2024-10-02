@@ -6,9 +6,7 @@ import {
 } from '@lobehub/chat-plugin-sdk';
 import { SearchParameters, SearchResponse, Settings } from '@/type';
 
-export default async function handler(req: NextRequest) {
-  if (req.method !== 'POST') return createErrorResponse(PluginErrorType.MethodNotAllowed);
-
+export async function POST(req: NextRequest) {
   const settings = getPluginSettingsFromRequest<Settings>(req);
   if (!settings)
     return createErrorResponse(PluginErrorType.PluginSettingsInvalid, {
