@@ -33,7 +33,7 @@
   ],
   "author": "hezhijie0327",
   "gateway": "http://localhost:3000/api/gateway",
-  "homepage": "https://github.com/hezhijie0327/lobechat-chat-plugin-searxng",
+  "homepage": "https://github.com/hezhijie0327/chat-plugin-searxng-search",
   "identifier": "searxng-search",
   "meta": {
     "avatar": "https://raw.githubusercontent.com/searxng/searxng/master/src/brand/searxng-wordmark.svg",
