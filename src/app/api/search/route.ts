@@ -21,21 +21,18 @@ export async function POST(req: NextRequest) {
       });
     console.log('SearXNG Instance URL:', searxngUrl);
 
-    const engines = settings.SEARXNG_ENGINE_LIST ?? '';
-    console.log('Engine List:', engines);
-
     const max_results = settings.SEARXNG_MAX_RESULTS ?? 5;
     console.log('Max Results:', max_results);
 
-    const { categories, language, q, time_range } = (await req.json()) as SearchParameters;
+    const { categories, language, q, safesearch, time_range } = (await req.json()) as SearchParameters;
 
     const searchParameters: SearchParameters = {
       categories: categories ?? 'general',
-      engines: engines ?? '',
       format: 'json',
       language: language ?? 'en-US',
       pageno: 1,
       q,
+      safesearch: safesearch ?? 0,
       time_range: time_range ?? 'month',
     };
     console.log('Search Parameters:', searchParameters);
