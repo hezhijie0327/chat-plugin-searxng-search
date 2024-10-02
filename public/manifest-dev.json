@@ -63,6 +63,11 @@
   },
   "settings": {
     "properties": {
+      "SEARXNG_ENGINE_LIST": {
+        "description": "指定使用特定的搜索引擎（逗号分隔）",
+        "title": "SearXNG Engine List",
+        "type": "string"
+      },
       "SEARXNG_INSTANCE_URL": {
         "description": "SearXNG 实例的 URL",
         "title": "SearXNG Instance URL",
@@ -72,11 +77,6 @@
         "description": "限制最大返回结果数量",
         "title": "SearXNG Max Results",
         "type": "number"
-      },
-      "SEARXNG_SEARCH_ENGINES": {
-        "description": "指定使用特定的搜索引擎（逗号分隔）",
-        "title": "SearXNG Engine List",
-        "type": "string"
       }
     },
     "required": [
