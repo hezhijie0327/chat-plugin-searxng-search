@@ -5,6 +5,7 @@ export interface SearchParameters {
   language?: string;
   pageno?: number;
   q: string;
+  safesearch?: number;
   time_range?: string;
 }
 
@@ -22,7 +23,6 @@ export interface SearchResponse {
 }
 
 export interface Settings {
-  SEARXNG_ENGINE_LIST?: string;
   SEARXNG_INSTANCE_URL: string;
   SEARXNG_MAX_RESULTS?: number;
 }
