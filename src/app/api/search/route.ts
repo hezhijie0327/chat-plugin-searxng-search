@@ -53,11 +53,12 @@ export async function POST(req: NextRequest) {
       method: 'POST',
     });
 
-    let results = await response.json();
-    results.results = results.results.slice(0, max_results);
-    console.log('Search Results:', results.results);
+    const results = await response.json();
 
-    return NextResponse.json(results.results);
+    const searchResults = results.results.slice(0, max_results);
+    console.log('Search Results:', searchResults);
+
+    return NextResponse.json(searchResults);
   } catch (error) {
     return createErrorResponse(PluginErrorType.PluginServerError, error as object);
   }
