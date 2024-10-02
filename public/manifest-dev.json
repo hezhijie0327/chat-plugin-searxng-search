@@ -53,7 +53,7 @@
         ],
         "type": "object"
       },
-      "url": "https://chat-plugin-searxng-search.vercel.app/api/search"
+      "url": "http://localhost:3000/api/search"
     }
   ],
   "author": "hezhijie0327",
@@ -72,11 +72,6 @@
   },
   "settings": {
     "properties": {
-      "SEARXNG_ENGINE_LIST": {
-        "description": "指定使用特定的搜索引擎（逗号分隔）",
-        "title": "SearXNG Engine List",
-        "type": "string"
-      },
       "SEARXNG_INSTANCE_URL": {
         "description": "SearXNG 实例的 URL",
         "title": "SearXNG Instance URL",
