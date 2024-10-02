@@ -28,11 +28,11 @@
         ],
         "type": "object"
       },
-      "url": "https://chat-plugin-searxng-search.zhijie.online/api/search"
+      "url": "https://chat-plugin-searxng-search.vercel.app/api/search"
     }
   ],
   "author": "hezhijie0327",
-  "gateway": "https://chat-plugin-searxng-search.zhijie.online/api/gateway",
+  "gateway": "https://chat-plugin-searxng-search.vercel.app/api/gateway",
   "homepage": "https://github.com/hezhijie0327/chat-plugin-searxng-search",
   "identifier": "searxng-search",
   "meta": {
