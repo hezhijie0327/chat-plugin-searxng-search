@@ -5,6 +5,22 @@
       "name": "searxngSearch",
       "parameters": {
         "properties": {
+          "categories": {
+            "description": "搜索的类别",
+            "enum": [
+              "files",
+              "general",
+              "images",
+              "it",
+              "map",
+              "music",
+              "news",
+              "science",
+              "social_media",
+              "videos"
+            ],
+            "type": "string"
+          },
           "language": {
             "description": "搜索的首选语言",
             "type": "string"
@@ -56,11 +72,15 @@
         "description": "限制最大返回结果数量",
         "title": "SearXNG Max Results",
         "type": "number"
+      },
+      "SEARXNG_SEARCH_ENGINES": {
+        "description": "指定使用特定的搜索引擎（逗号分隔）",
+        "title": "SearXNG Engine List",
+        "type": "string"
       }
     },
     "required": [
-      "SEARXNG_INSTANCE_URL",
-      "SEARXNG_MAX_RESULTS"
+      "SEARXNG_INSTANCE_URL"
     ],
     "type": "object"
   },
