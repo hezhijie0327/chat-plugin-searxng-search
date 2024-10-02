@@ -62,7 +62,8 @@
       }
     },
     "required": [
-      "SEARXNG_INSTANCE_URL"
+      "SEARXNG_INSTANCE_URL",
+      "SEARXNG_MAX_RESULTS"
     ],
     "type": "object"
   },
