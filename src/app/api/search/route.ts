@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     });
 
   try {
-    const searxngUrl = process.env.SEARXNG_INSTANCE_URL ?? settings.SEARXNG_INSTANCE_URL;
+    const searxngUrl = settings.SEARXNG_INSTANCE_URL;
     if (!searxngUrl)
       return createErrorResponse(PluginErrorType.PluginSettingsInvalid, {
         message: 'SEARXNG_INSTANCE_URL not found in plugin settings.',
