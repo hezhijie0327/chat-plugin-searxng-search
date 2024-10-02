@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
       language: language ?? 'en-US',
       pageno: 1,
       q,
-      safesearch: safesearch ?? '0',
+      safesearch: safesearch ?? 0,
       time_range: time_range ?? 'month',
     };
     console.log('Search Parameters:', searchParameters);
