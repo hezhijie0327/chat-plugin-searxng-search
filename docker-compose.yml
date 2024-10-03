@@ -1,0 +1,20 @@
+services:
+  searxng:
+    image: searxng/searxng
+    container_name: searxng
+    ports:
+      - "8080:8080"
+    environment:
+      - BASE_URL=http://localhost:8080
+      - INSTANCE_NAME=SearXNG
+    restart: unless-stopped
+  lobe_plugin:
+    image: hezhijie0327/lobechat:searxng
+    container_name: searxng_lobe_plugin
+    ports:
+      -e "3000:3000"
+    environment:
+      - PORT="3000"
+      - PRODUCTION_URL="https://plugin.example.org"
+      - SEARXNG_INSTANCE_URL="http://searxng:8080"
+    restart: unless-stopped
