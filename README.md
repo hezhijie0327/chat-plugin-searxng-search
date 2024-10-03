@@ -26,4 +26,4 @@
        -d hezhijie0327/lobechat:searxng
    ```
 2. 打开 LobeChat 并添加插件
-![image](https://github.com/user-attachments/assets/7addaa1a-8d89-420a-a9ae-dbf6ec750b66)
+![image](https://github.com/user-attachments/assets/e06458ed-762c-4858-a774-2894716b2e76)
