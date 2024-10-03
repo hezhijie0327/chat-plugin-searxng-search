@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     });
 
   try {
-    const searxngUrl = settings.SEARXNG_INSTANCE_URL ?? 'http://127.0.0.1:8080';
+    const searxngUrl = settings.SEARXNG_INSTANCE_URL ?? 'http://localhost:8080';
     console.log('SearXNG Instance URL:', searxngUrl);
 
     const max_results = settings.SEARXNG_MAX_RESULTS ?? 5;
