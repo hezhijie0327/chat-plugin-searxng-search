@@ -16,5 +16,4 @@ services:
     environment:
       - PORT="3000"
       - PRODUCTION_URL="https://plugin.example.org"
-      - SEARXNG_INSTANCE_URL="http://searxng:8080"
     restart: unless-stopped
