@@ -28,10 +28,12 @@ COPY --from=app /app /app
 WORKDIR /app
 
 ENV PORT="3000" \
-    PRODUCTION_URL=""
+    PRODUCTION_URL="" \
+    SEARXNG_INSTANCE_URL=""
 
 EXPOSE 3000/tcp
 
 CMD \
-    cat "/app/public/manifest-dev.json" | sed "s|http://localhost:3000|${PRODUCTION_URL:-http://localhost:3000}|g" > "/app/public/manifest.json"; \
+    sed -i "s|http://localhost:8080|${SEARXNG_INSTANCE_URL:-http://localhost:8080}|g" "/app/.next/app/api/search/route.js"; \
+    sed "s|http://localhost:3000|${PRODUCTION_URL:-http://localhost:3000}|g" "/app/public/manifest-dev.json" > "/app/public/manifest.json"; \
     npm run start
