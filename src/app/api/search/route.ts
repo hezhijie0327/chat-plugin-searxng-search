@@ -16,10 +16,11 @@ export async function POST(req: NextRequest) {
     }
 
     const searxngUrl = settings.SEARXNG_INSTANCE_URL;
-    if (!searxngUrl)
+    if (!searxngUrl) {
       return createErrorResponse(PluginErrorType.PluginSettingsInvalid, {
         message: 'SEARXNG_INSTANCE_URL not found in plugin settings.',
       });
+    }
     console.log('SearXNG Instance URL:', searxngUrl);
 
     const max_results = settings.SEARXNG_MAX_RESULTS ?? 5;
