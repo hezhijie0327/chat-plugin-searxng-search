@@ -83,6 +83,9 @@
         "type": "number"
       }
     },
+    "required": [
+      "SEARXNG_INSTANCE_URL"
+    ],
     "type": "object"
   },
   "version": "1"
