@@ -22,7 +22,6 @@
    docker run --name searxng_lobechat \
        -p 3000:3000 \
        -e PRODUCTION_URL="https://plugin-searxng.example.org" \
-       -e SEARXNG_INSTANCE_URL="http://searxng:8080" \
        -d hezhijie0327/lobechat:searxng
    ```
 2. 打开 LobeChat 并添加插件
