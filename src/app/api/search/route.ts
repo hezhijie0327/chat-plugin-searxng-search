@@ -9,6 +9,11 @@ import { SearchParameters, Settings } from '@/type';
 export async function POST(req: NextRequest) {
   try {
     const settings = getPluginSettingsFromRequest<Settings>(req);
+    if (!settings) {
+      return createErrorResponse(PluginErrorType.PluginSettingsInvalid, {
+        message: 'Plugin settings not found.',
+      });      
+    }
 
     const searxngUrl = settings.SEARXNG_INSTANCE_URL ?? 'http://localhost:8080';
     console.log('SearXNG Instance URL:', searxngUrl);
