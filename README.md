@@ -26,3 +26,5 @@
    ```
 2. 打开 LobeChat 并添加插件
 ![image](https://github.com/user-attachments/assets/e06458ed-762c-4858-a774-2894716b2e76)
+3. 调整插件参数
+![image](https://github.com/user-attachments/assets/9ef9c426-f2bd-4a07-bcbd-7b2c98b97ad1)
