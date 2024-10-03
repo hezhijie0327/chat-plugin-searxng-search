@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
       });      
     }
 
-    const searxngUrl = settings.SEARXNG_INSTANCE_URL ?? 'http://localhost:8080';
+    const searxngUrl = /^https?:\/\//.test(settings.SEARXNG_INSTANCE_URL) ? settings.SEARXNG_INSTANCE_URL : 'http://localhost:8080';
     console.log('SearXNG Instance URL:', searxngUrl);
 
     const max_results = settings.SEARXNG_MAX_RESULTS ?? 5;
