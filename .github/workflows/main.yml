@@ -1,4 +1,4 @@
-# Current Version: 1.0.2
+# Current Version: 1.0.3
 
 name: Build & Push chat-plugin-searxng-search
 
@@ -22,7 +22,7 @@ jobs:
               with:
                   username: ${{ secrets.DOCKERHUB_USERNAME }}
                   password: ${{ secrets.DOCKERHUB_TOKEN }}
-            - name: Step 5 - Build hezhijie0327/lobechat:searxng
+            - name: Step 5 - Build lobechat:searxng
               uses: docker/build-push-action@v5
               with:
                   file: ./Dockerfile
