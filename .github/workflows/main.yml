@@ -1,6 +1,6 @@
-# Current Version: 1.0.1
+# Current Version: 1.0.2
 
-name: Build & Push hezhijie0327/chat-plugin-searxng-search
+name: Build & Push chat-plugin-searxng-search
 
 on:
     schedule:
