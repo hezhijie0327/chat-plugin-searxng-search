@@ -29,14 +29,14 @@ export async function POST(req: NextRequest) {
     const { categories, engines, language, q, safesearch, time_range } = (await req.json()) as SearchParameters;
 
     const searchParameters: SearchParameters = {
-      ...(engines ? {} : { categories: categories ?? 'general' }),
-      engines: engines ?? '',
+      ...(engines ? { engines } : (categories ? { categories } : {})),
+      ...(engines ? { engines } : {}),
       format: 'json',
-      language: language ?? 'en-US',
+      ...(language ? { language } : {}),
       pageno: 1,
       q,
-      safesearch: safesearch ?? 0,
-      time_range: time_range ?? 'month',
+      ...(safesearch !== undefined ? { safesearch } : {}),
+      ...(time_range ? { time_range } : {}),
     };
     console.log('Search Parameters:', searchParameters);
 
