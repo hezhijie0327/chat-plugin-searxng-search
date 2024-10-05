@@ -12,6 +12,14 @@
        -d searxng/searxng:latest
    ```
 3. 打开浏览器并访问 `http://localhost:8080`，即可使用 SearXNG 搜索。
+4. 注：需要在配置中启用 `json` 返回才能使用以下功能，可参考官方配置文件 [Use Default Settings](https://docs.searxng.org/admin/installation-searxng.html#use-default-settings-yml)
+```
+  formats:
+    - html
+    - json
+```
+
+
 
 ## 安装 SearXNG Search Plugin for LobeChat
 
