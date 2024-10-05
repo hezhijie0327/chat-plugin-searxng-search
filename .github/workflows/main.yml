@@ -1,4 +1,4 @@
-# Current Version: 1.0.0
+# Current Version: 1.0.1
 
 name: Build & Push hezhijie0327/chat-plugin-searxng-search
 
@@ -25,7 +25,7 @@ jobs:
             - name: Step 5 - Build hezhijie0327/lobechat:searxng
               uses: docker/build-push-action@v5
               with:
-                  file: ./gpg.dockerfile
+                  file: ./Dockerfile
                   platforms: linux/amd64, linux/arm64
                   push: true
                   tags: |
