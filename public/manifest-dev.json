@@ -21,6 +21,10 @@
             ],
             "type": "string"
           },
+          "engines": {
+            "description": "指定搜索的引擎",
+            "type": "string"
+          },
           "language": {
             "description": "指定搜索的首选语言",
             "type": "string"
