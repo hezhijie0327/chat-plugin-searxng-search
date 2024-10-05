@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     const { categories, engines, language, q, safesearch, time_range } = (await req.json()) as SearchParameters;
 
     const searchParameters: SearchParameters = {
-      categories: categories ?? 'general',
+      ...(engines ? {} : { categories: categories ?? 'general' }),
       engines: engines ?? '',
       format: 'json',
       language: language ?? 'en-US',
