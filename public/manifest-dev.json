@@ -6,7 +6,7 @@
       "parameters": {
         "properties": {
           "categories": {
-            "description": "指定搜索的类别",
+            "description": "搜索的类别",
             "enum": [
               "files",
               "general",
@@ -21,29 +21,12 @@
             ],
             "type": "string"
           },
-          "engines": {
-            "description": "指定搜索的引擎",
-            "type": "string"
-          },
-          "language": {
-            "description": "指定搜索的首选语言",
-            "type": "string"
-          },
           "q": {
-            "description": "搜索内容",
+            "description": "搜索的内容",
             "type": "string"
-          },
-          "safesearch": {
-            "description": "指定搜索结果的过滤等级",
-            "enum": [
-              0,
-              1,
-              2
-            ],
-            "type": "number"
           },
           "time_range": {
-            "description": "指定搜索结果的时间范围",
+            "description": "搜索的时间范围",
             "enum": [
               "day",
               "month",
