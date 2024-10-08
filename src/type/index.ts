@@ -1,5 +1,5 @@
 export interface SearchParameters {
-  categories?: string;
+  categories?: string | string[];
   format?: string;
   pageno?: number;
   q: string;
