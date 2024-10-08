@@ -3,8 +3,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // matching all API routes
-        source: '/:path*',
         headers: [
           { key: 'Access-Control-Allow-Credentials', value: 'true' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
@@ -15,8 +13,29 @@ const nextConfig = {
               'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
           },
         ],
+        source: '/:path*',
       },
     ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/rewrite/api/gateway',
+        destination: '/api/gateway'
+      },
+      {
+        source: '/rewrite/api/search',
+        destination: '/api/search'
+      },
+      {
+        source: '/rewrite/manifest.json',
+        destination: '/manifest.json'
+      },
+      {
+        source: '/rewrite/manifest-dev.json',
+        destination: '/manifest-dev.json'
+      },
+    ]
   },
 };
 

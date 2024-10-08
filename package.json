@@ -1,10 +1,10 @@
 {
   "name": "chat-plugin-searxng-search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "This is a SearXNG Search plugin for LobeChat.",
-  "homepage": "https://github.com/hezhijie0327/lobechat-chat-plugin-searxng",
-  "repository": "https://github.com/hezhijie0327/lobechat-chat-plugin-searxng.git",
+  "homepage": "https://github.com/hezhijie0327/chat-plugin-searxng-search",
+  "repository": "https://github.com/hezhijie0327/chat-plugin-searxng-search.git",
   "workspaces": [
     "./*"
   ],
