@@ -6,7 +6,7 @@
       "parameters": {
         "properties": {
           "categories": {
-            "description": "(optional) Comma separated list, specifies the active search categories",
+            "description": "(optional) [array] Specifies the active search categories",
             "items": {
               "enum": [
                 "files",
@@ -25,11 +25,11 @@
             "type": "array"
           },
           "q": {
-            "description": "(required) The search query. This string is passed to external search services. Thus, SearXNG supports syntax of each search service. For example, site:github.com SearXNG is a valid query for Google. However, if simply the query above is passed to any search engine which does not filter its results based on this syntax, you might not get the results you wanted.",
+            "description": "(required) [string] The search query. This string is passed to external search services. Thus, SearXNG supports syntax of each search service. For example, site:github.com SearXNG is a valid query for Google. However, if simply the query above is passed to any search engine which does not filter its results based on this syntax, you might not get the results you wanted.",
             "type": "string"
           },
           "time_range": {
-            "description": "(optional) Time range of search for engines which support it. See if an engine supports time range search in the preferences page of an instance.",
+            "description": "(optional) [string] Time range of search for engines which support it. See if an engine supports time range search in the preferences page of an instance.",
             "enum": [
               "day",
               "month",
