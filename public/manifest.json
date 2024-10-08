@@ -7,19 +7,22 @@
         "properties": {
           "categories": {
             "description": "(optional) Comma separated list, specifies the active search categories",
-            "enum": [
-              "files",
-              "general",
-              "images",
-              "it",
-              "map",
-              "music",
-              "news",
-              "science",
-              "social_media",
-              "videos"
-            ],
-            "type": "string"
+            "items": {
+              "enum": [
+                "files",
+                "general",
+                "images",
+                "it",
+                "map",
+                "music",
+                "news",
+                "science",
+                "social_media",
+                "videos"
+              ],
+              "type": "string"
+            },
+            "type": "array"
           },
           "q": {
             "description": "(required) The search query. This string is passed to external search services. Thus, SearXNG supports syntax of each search service. For example, site:github.com SearXNG is a valid query for Google. However, if simply the query above is passed to any search engine which does not filter its results based on this syntax, you might not get the results you wanted.",
