@@ -55,7 +55,9 @@ export async function POST(req: NextRequest) {
 
     const results = await response.json();
 
-    const searchResults = results.results.slice(0, max_results);
+    const searchResults = results.results
+      .sort((a: any, b: any) => b.score - a.score)
+      .slice(0, max_results);
     console.log('Search Results:', searchResults);
 
     return NextResponse.json(searchResults);
