@@ -3,8 +3,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // matching all API routes
-        source: '/:path*',
         headers: [
           { key: 'Access-Control-Allow-Credentials', value: 'true' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
@@ -15,25 +13,26 @@ const nextConfig = {
               'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
           },
         ],
+        source: '/:path*',
       },
     ];
   },
   async rewrites() {
     return [
       {
-        source: '/searxng/gateway',
+        source: '/rewrite/api/gateway',
         destination: '/api/gateway'
       },
       {
-        source: '/searxng/search',
+        source: '/rewrite/api/search',
         destination: '/api/search'
       },
       {
-        source: '/searxng/manifest.json',
+        source: '/rewrite/manifest.json',
         destination: '/manifest.json'
       },
       {
-        source: '/searxng/manifest-dev.json',
+        source: '/rewrite/manifest-dev.json',
         destination: '/manifest-dev.json'
       },
     ]
