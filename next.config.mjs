@@ -20,19 +20,19 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/rewrite/api/gateway',
+        source: '/searxng-search/api/gateway',
         destination: '/api/gateway'
       },
       {
-        source: '/rewrite/api/search',
+        source: '/searxng-search/api/search',
         destination: '/api/search'
       },
       {
-        source: '/rewrite/manifest.json',
+        source: '/searxng-search/manifest.json',
         destination: '/manifest.json'
       },
       {
-        source: '/rewrite/manifest-dev.json',
+        source: '/searxng-search/manifest-dev.json',
         destination: '/manifest-dev.json'
       },
     ]
