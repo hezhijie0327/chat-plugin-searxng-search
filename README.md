@@ -36,4 +36,4 @@
 ![image](https://github.com/user-attachments/assets/e06458ed-762c-4858-a774-2894716b2e76)
 3. 调整插件参数
 ![image](https://github.com/user-attachments/assets/c1624b12-bfa3-46d8-ba25-a8454a001fa4)
-4. 注：若使用反向代理且使用与 LobeChat 相同主域名时，可使用 Rewrite 路径 `/rewrite/manifest.json`, `/rewrite/api`, `/rewrite/gateway`
+4. 注：若使用反向代理且使用与 LobeChat 相同主域名时，可使用 Rewrite 路径 `/rewrite/manifest.json`, `/rewrite/api/gateway`, `/rewrite/api/search`
