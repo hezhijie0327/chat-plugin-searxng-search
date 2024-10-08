@@ -21,13 +21,21 @@ const nextConfig = {
   async rewrites() {
     return [
       {
+        source: '/searxng/gateway',
+        destination: '/api/gateway'
+      },
+      {
+        source: '/searxng/search',
+        destination: '/api/search'
+      },
+      {
         source: '/searxng/manifest.json',
         destination: '/manifest.json'
       },
       {
         source: '/searxng/manifest-dev.json',
         destination: '/manifest-dev.json'
-      }
+      },
     ]
   },
 };
