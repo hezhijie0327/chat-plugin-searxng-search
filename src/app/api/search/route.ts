@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
       });      
     }
 
-    const searxngUrl = settings.SEARXNG_INSTANCE_URL;
+    const searxngUrl = settings.SEARXNG_INSTANCE_URL ?? 'http://127.0.0.1:8081/search';
     if (!searxngUrl) {
       return createErrorResponse(PluginErrorType.PluginSettingsInvalid, {
         message: 'SEARXNG_INSTANCE_URL not found in plugin settings.',
