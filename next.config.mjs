@@ -18,6 +18,18 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/searxng/manifest.json',
+        destination: '/manifest.json'
+      },
+      {
+        source: '/searxng/manifest-dev.json',
+        destination: '/manifest-dev.json'
+      }
+    ]
+  },
 };
 
 export default nextConfig;
