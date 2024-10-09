@@ -6,7 +6,7 @@
       "parameters": {
         "properties": {
           "categories": {
-            "description": "(optional) [array] Specifies the active search categories",
+            "description": "(optional) [array] Specifies the active search categories. Cannot be specified if 'engines' is also provided.",
             "items": {
               "enum": [
                 "files",
@@ -24,9 +24,26 @@
             },
             "type": "array"
           },
+          "engines": {
+            "description": "(optional) [array] Specifies the active search engines. Cannot be specified if 'categories' is also provided.",
+            "type": "array"
+          },
+          "language": {
+            "description": "(optional) [string] Code of the language. List of available languages - leave unset to use all codes from git://searx/languages.py. Otherwise list codes of available languages. The all value is shown as the Default language in the user interface (in most cases, it is meant to send the query without a language parameter ; in some cases, it means the English language)",
+            "type": "string"
+          },
           "q": {
             "description": "(required) [string] The search query. This string is passed to external search services. Thus, SearXNG supports syntax of each search service. For example, site:github.com SearXNG is a valid query for Google. However, if simply the query above is passed to any search engine which does not filter its results based on this syntax, you might not get the results you wanted.",
             "type": "string"
+          },
+          "safesearch": {
+            "description": "(optional) [number] Filter search results of engines which support safe search. See if an engine supports safe search in the preferences page of an instance. 0: None 1: Moderate 2: Strict",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "number"
           },
           "time_range": {
             "description": "(optional) [string] Time range of search for engines which support it. See if an engine supports time range search in the preferences page of an instance.",
