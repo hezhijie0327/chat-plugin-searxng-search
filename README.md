@@ -37,3 +37,6 @@
 3. 调整插件参数
 ![image](https://github.com/user-attachments/assets/c1624b12-bfa3-46d8-ba25-a8454a001fa4)
 4. 注：若使用反向代理且使用与 LobeChat 相同主域名时，可使用 Rewrite 路径 `/searxng-search/manifest.json`, `/searxng-search/api/gateway`, `/searxng-search/api/search`
+
+## 工具调用截图
+![image](https://github.com/user-attachments/assets/f2065c1c-1cbf-4b12-b784-53331c3ffc62)
