@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
       ...(language ? { language: language } : {}),
       pageno: 1,
       q,
-      ...(safesearch ? { safesearch: safesearch } : {}),
+      ...(safesearch !== undefined ? { safesearch } : {}),
       ...(time_range ? { time_range } : {}),
     };
     console.log('Search Parameters:', searchParameters);
