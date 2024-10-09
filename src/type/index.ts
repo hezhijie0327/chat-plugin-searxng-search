@@ -1,11 +1,8 @@
 export interface SearchParameters {
   categories?: any;
-  engines?: any;
   format?: string;
-  language?: string;
   pageno?: number;
   q: string;
-  safesearch?: number;
   time_range?: string;
 }
 

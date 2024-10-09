@@ -26,16 +26,13 @@ export async function POST(req: NextRequest) {
     const max_results = settings.SEARXNG_MAX_RESULTS ?? 5;
     console.log('Max Results:', max_results);
 
-    const { categories, engines, language, q, safesearch, time_range } = (await req.json()) as SearchParameters;
+    const { categories, q, time_range } = (await req.json()) as SearchParameters;
 
     const searchParameters: SearchParameters = {
       ...(categories ? { categories: categories.join(',') } : {}),
-      ...(engines ? { engines: engines.join(',') } : {}),
       format: 'json',
-      ...(language ? { language: language } : {}),
       pageno: 1,
       q,
-      ...(safesearch !== undefined ? { safesearch } : {}),
       ...(time_range ? { time_range } : {}),
     };
     console.log('Search Parameters:', searchParameters);
