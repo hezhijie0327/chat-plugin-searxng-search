@@ -25,7 +25,7 @@
             "type": "array"
           },
           "q": {
-            "description": "(required) [string] The search query. This string is passed to external search services. Thus, SearXNG supports syntax of each search service. For example, site:github.com SearXNG is a valid query for Google. However, if simply the query above is passed to any search engine which does not filter its results based on this syntax, you might not get the results you wanted.",
+            "description": "(required) [string] The search query. SearXNG comes with a search syntax by with you can modify the categories, engines, languages and more. For example, 1. Select a search engine: '!google' 2. Choose a language: ':zh' 3. Search within a specific site: 'site:github.com'",
             "type": "string"
           },
           "time_range": {
