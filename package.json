@@ -21,7 +21,7 @@
   "dependencies": {
     "@lobehub/chat-plugin-sdk": "^1",
     "@lobehub/chat-plugins-gateway": "^1",
-    "next": "14.2.10",
+    "next": "14.2.15",
     "vitest": "^2.1.1"
   },
   "devDependencies": {
