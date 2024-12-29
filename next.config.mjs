@@ -35,6 +35,10 @@ const nextConfig = {
         source: '/searxng-search/manifest-dev.json',
         destination: '/manifest-dev.json'
       },
+      {
+        source: '/searxng-search/searxng.svg',
+        destination: '/searxng.svg'
+      },
     ]
   },
 };
