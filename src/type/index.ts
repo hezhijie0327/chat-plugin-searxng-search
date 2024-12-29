@@ -1,7 +1,6 @@
 export interface SearchParameters {
   categories?: any;
   format?: string;
-  pageno?: number;
   q: string;
   time_range?: string;
 }
