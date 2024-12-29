@@ -51,7 +51,7 @@
   "homepage": "https://github.com/hezhijie0327/chat-plugin-searxng-search",
   "identifier": "searxng-search",
   "meta": {
-    "avatar": "https://raw.githubusercontent.com/searxng/searxng/master/src/brand/searxng-wordmark.svg",
+    "avatar": "http://localhost:3000/searxng.svg",
     "description": "SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.",
     "tags": [
       "web",
