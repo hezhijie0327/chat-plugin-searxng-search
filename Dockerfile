@@ -27,9 +27,7 @@ WORKDIR /app
 
 RUN \
     if [ "${USE_CN_MIRROR:-false}" = "true" ]; then \
-        export SENTRYCLI_CDNURL="https://npmmirror.com/mirrors/sentry-cli"; \
         npm config set registry "https://registry.npmmirror.com/"; \
-        echo 'canvas_binary_host_mirror=https://npmmirror.com/mirrors/canvas' >> .npmrc; \
     fi \
     && export COREPACK_NPM_REGISTRY=$(npm config get registry | sed 's/\/$//') \
     && export PNPM_HOME="/pnpm" \
@@ -57,8 +55,6 @@ ENV PORT="3000" \
     PRODUCTION_URL=""
 
 EXPOSE 3000/tcp
-
-ENTRYPOINT ["/bin/node"]
 
 CMD \
     sed "s|http://localhost:3000|${PRODUCTION_URL:-http://localhost:3000}|g" "/app/public/manifest-dev.json" > "/app/public/manifest.json"; \
