@@ -1,6 +1,6 @@
 {
   "name": "chat-plugin-searxng-search",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "description": "(Lobe Chat Plugin) Provides meta-search functionality through SearXNG, aggregating results from multiple search engines.",
   "homepage": "https://github.com/hezhijie0327/chat-plugin-searxng-search",
@@ -21,7 +21,7 @@
   "dependencies": {
     "@lobehub/chat-plugin-sdk": "^1",
     "@lobehub/chat-plugins-gateway": "^1",
-    "next": "^14.2.15",
+    "next": "^15.1.2",
     "vitest": "^2.1.1"
   },
   "devDependencies": {
