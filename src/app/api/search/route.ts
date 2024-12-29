@@ -31,7 +31,6 @@ export async function POST(req: NextRequest) {
     const searchParameters: SearchParameters = {
       ...(categories ? { categories: categories.join(',') } : {}),
       format: 'json',
-      pageno: 1,
       q,
       ...(time_range ? { time_range } : {}),
     };
