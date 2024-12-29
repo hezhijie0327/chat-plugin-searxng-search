@@ -1,7 +1,7 @@
-import {NextRequest, NextResponse} from "next/server";
+import {NextRequest} from "next/server";
 import {createGatewayOnEdgeRuntime} from "@lobehub/chat-plugins-gateway";
 
-export async function OPTIONS(req: NextRequest, res: NextResponse) {
+export async function OPTIONS(req: NextRequest) {
   return createGatewayOnEdgeRuntime()(req)
 }
 
