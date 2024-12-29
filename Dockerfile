@@ -30,11 +30,7 @@ RUN \
     if [ "${USE_CN_MIRROR:-false}" = "true" ]; then \
         npm config set registry "https://registry.npmmirror.com/"; \
     fi \
-    && export COREPACK_NPM_REGISTRY=$(npm config get registry | sed 's/\/$//') \
-    && export PNPM_HOME="/pnpm" \
-    && corepack enable \
-    && corepack use pnpm \
-    && pnpm i \
+    && npm i \
     && npm run build
 
 FROM busybox:latest AS app
