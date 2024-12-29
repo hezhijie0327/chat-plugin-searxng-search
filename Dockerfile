@@ -49,8 +49,6 @@ FROM scratch
 
 COPY --from=app / /
 
-WORKDIR /app
-
 ENV PORT="3000" \
     PRODUCTION_URL=""
 
@@ -58,4 +56,4 @@ EXPOSE 3000/tcp
 
 CMD \
     sed "s|http://localhost:3000|${PRODUCTION_URL:-http://localhost:3000}|g" "/app/public/manifest-dev.json" > "/app/public/manifest.json"; \
-    node node_modules/next/dist/bin/next start -H 0.0.0.0
+    node /app/node_modules/next/dist/bin/next start -H 0.0.0.0
