@@ -1,4 +1,4 @@
-# Current Version: 1.0.6
+# Current Version: 1.0.7
 
 name: Build & Push chat-plugin-searxng-search
 
@@ -23,6 +23,8 @@ jobs:
             - name: Step 5 - Build lobechat:searxng
               uses: docker/build-push-action@v5
               with:
+                  build-args: |
+                    NODEJS_VERSION=22
                   file: ./Dockerfile
                   platforms: linux/amd64, linux/arm64
                   push: true
