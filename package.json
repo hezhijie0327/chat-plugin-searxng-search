@@ -5,9 +5,6 @@
   "description": "(Lobe Chat Plugin) Provides meta-search functionality through SearXNG, aggregating results from multiple search engines.",
   "homepage": "https://github.com/hezhijie0327/chat-plugin-searxng-search",
   "repository": "https://github.com/hezhijie0327/chat-plugin-searxng-search.git",
-  "workspaces": [
-    "./*"
-  ],
   "scripts": {
     "build": "next build",
     "dev": "next dev -H 0.0.0.0",
