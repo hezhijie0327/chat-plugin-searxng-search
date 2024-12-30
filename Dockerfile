@@ -31,8 +31,7 @@ RUN \
         npm config set registry "https://registry.npmmirror.com/"; \
     fi \
     && npm i \
-    && npm run build \
-    && npm prune
+    && npm run build
 
 FROM busybox:latest AS app
 
