@@ -54,10 +54,10 @@ export async function POST(req: NextRequest) {
 
     const results = await response.json();
 
-    const searchAnswers = results.answers.slice(0, max_results);
-    console.log('Search Answers:', searchAnswers);
+    const searchResults = results.results.slice(0, max_results);
+    console.log('Search Results:', searchResults);
 
-    return NextResponse.json(searchAnswers);
+    return NextResponse.json(searchResults);
   } catch (error) {
     return createErrorResponse(PluginErrorType.PluginServerError, error as object);
   }
