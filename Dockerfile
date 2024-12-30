@@ -26,6 +26,10 @@ ADD . /app
 
 WORKDIR /app
 
+ENV \
+    DOCKER="true"
+    NODE_ENV="production"
+
 RUN \
     if [ "${USE_CN_MIRROR:-false}" = "true" ]; then \
         npm config set registry "https://registry.npmmirror.com/"; \
