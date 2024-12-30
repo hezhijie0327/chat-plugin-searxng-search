@@ -55,4 +55,4 @@ EXPOSE 3000/tcp
 
 CMD \
     sed "s|http://localhost:3000|${PRODUCTION_URL:-http://localhost:3000}|g" "/app/public/manifest-dev.json" > "/app/public/manifest.json" \
-    && node /app/.next/standalone/server.js
+    && node "/app/server.js"
