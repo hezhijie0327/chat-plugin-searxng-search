@@ -28,13 +28,17 @@ WORKDIR /app
 
 ENV \
     DOCKER="true" \
-    NODE_ENV="production"
+    NODE_ENV="production" \
+    PNPM_HOME="/pnpm"
 
 RUN \
     if [ "${USE_CN_MIRROR:-false}" = "true" ]; then \
         npm config set registry "https://registry.npmmirror.com/"; \
     fi \
-    && npm i \
+    && export COREPACK_NPM_REGISTRY=$(npm config get registry | sed 's/\/$//') \
+    && corepack enable \
+    && corepack use pnpm \
+    && pnpm i \
     && npm run build
 
 FROM busybox:latest AS app
