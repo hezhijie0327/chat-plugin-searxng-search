@@ -13,12 +13,12 @@
   "dependencies": {
     "@lobehub/chat-plugin-sdk": "^1",
     "@lobehub/chat-plugins-gateway": "^1",
-    "next": "^14.2.15",
-    "vitest": "^2.1.1"
+    "next": "^14",
+    "vitest": "^2"
   },
   "devDependencies": {
-    "@types/node": "22.7.4",
-    "@types/react": "18.3.10",
-    "typescript": "5.6.2"
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "typescript": "^5"
   }
 }
