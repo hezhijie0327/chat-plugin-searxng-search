@@ -37,10 +37,12 @@ FROM busybox:latest AS app
 
 COPY --from=base /distroless/ /
 
-COPY --from=builder /app/.next /app/.next
 COPY --from=builder /app/public /app/public
+
+COPY --from=builder /app/.next/standalone /app/
+COPY --from=builder /app/.next/static /app/.next/static
+
 COPY --from=builder /app/node_modules /app/node_modules
-COPY --from=builder /app/package.json /app/package.json
 
 FROM scratch
 
@@ -52,6 +54,5 @@ ENV PORT="3000" \
 EXPOSE 3000/tcp
 
 CMD \
-    cd /app \
-    && sed "s|http://localhost:3000|${PRODUCTION_URL:-http://localhost:3000}|g" "/app/public/manifest-dev.json" > "/app/public/manifest.json" \
-    && node /app/node_modules/next/dist/bin/next start -H 0.0.0.0
+    sed "s|http://localhost:3000|${PRODUCTION_URL:-http://localhost:3000}|g" "/app/public/manifest-dev.json" > "/app/public/manifest.json" \
+    && node "/app/server.js"
