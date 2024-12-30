@@ -54,7 +54,9 @@ FROM scratch
 
 COPY --from=app / /
 
-ENV PORT="3000" \
+ENV \
+    HOSTNAME="0.0.0.0" \
+    PORT="3000" \
     PRODUCTION_URL=""
 
 EXPOSE 3000/tcp
