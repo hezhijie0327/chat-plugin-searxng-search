@@ -54,7 +54,16 @@ export async function POST(req: NextRequest) {
 
     const results = await response.json();
 
-    const searchResults = results.results.slice(0, max_results);
+    let searchResults = results.results
+      .sort((a: any, b: any) => b.score - a.score)
+      .slice(0, max_results);
+    if (time_range) {
+      searchResults = searchResults.sort((a, b) => {
+        const dateA = new Date(a.publishedDate || 0).getTime();
+        const dateB = new Date(b.publishedDate || 0).getTime();
+        return dateB - dateA;
+      });
+    }
     console.log('Search Results:', searchResults);
 
     return NextResponse.json(searchResults);
