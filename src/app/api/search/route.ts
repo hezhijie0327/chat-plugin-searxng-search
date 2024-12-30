@@ -57,17 +57,7 @@ export async function POST(req: NextRequest) {
     const searchAnswers = results.answers.slice(0, max_results);
     console.log('Search Answers:', searchAnswers);
 
-    const searchInfoboxes = results.infoboxes.slice(0, max_results);
-    console.log('Search Infoboxes:', searchInfoboxes);
-
-    const searchResults = results.results
-      .sort((a: any, b: any) => b.score - a.score)
-      .slice(0, max_results);
-    console.log('Search Results:', searchResults);
-
-    const combinedResults = [...searchAnswers, ...searchInfoboxes, ...searchResults];
-
-    return NextResponse.json(combinedResults);
+    return NextResponse.json(searchAnswers);
   } catch (error) {
     return createErrorResponse(PluginErrorType.PluginServerError, error as object);
   }
