@@ -13,7 +13,7 @@
   "dependencies": {
     "@lobehub/chat-plugin-sdk": "^1",
     "@lobehub/chat-plugins-gateway": "^1",
-    "next": "^15.1.2",
+    "next": "^14.2.15",
     "vitest": "^2.1.1"
   },
   "devDependencies": {
