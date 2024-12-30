@@ -27,7 +27,7 @@ ADD . /app
 WORKDIR /app
 
 ENV \
-    DOCKER="true"
+    DOCKER="true" \
     NODE_ENV="production"
 
 RUN \
