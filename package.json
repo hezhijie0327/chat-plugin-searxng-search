@@ -10,11 +10,6 @@
     "dev": "next dev -H 0.0.0.0",
     "start": "next start -H 0.0.0.0"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 10"
-  ],
   "dependencies": {
     "@lobehub/chat-plugin-sdk": "^1",
     "@lobehub/chat-plugins-gateway": "^1",
