@@ -11,14 +11,14 @@
     "start": "next start -H 0.0.0.0"
   },
   "dependencies": {
-    "@lobehub/chat-plugin-sdk": "^1",
-    "@lobehub/chat-plugins-gateway": "^1",
-    "next": "^15.1.2",
-    "vitest": "^2.1.1"
+    "@lobehub/chat-plugin-sdk": "latest",
+    "@lobehub/chat-plugins-gateway": "latest",
+    "next": "^14",
+    "vitest": "latest"
   },
   "devDependencies": {
-    "@types/node": "22.7.4",
-    "@types/react": "18.3.10",
-    "typescript": "5.6.2"
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "typescript": "latest"
   }
 }
