@@ -36,8 +36,9 @@ RUN \
         npm config set registry "https://registry.npmmirror.com/"; \
     fi \
     && export COREPACK_NPM_REGISTRY=$(npm config get registry | sed 's/\/$//') \
+    && npm i -g corepack@latest \
     && corepack enable \
-    && corepack use pnpm \
+    && corepack use $(sed -n 's/.*"packageManager": "\(.*\)".*/\1/p' package.json) \
     && pnpm i \
     && npm run build
 
