@@ -20,5 +20,6 @@
     "@types/node": "^22",
     "@types/react": "^18",
     "typescript": "latest"
-  }
+  },
+  "packageManager": "pnpm@9.15.4"
 }
