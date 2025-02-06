@@ -5,6 +5,7 @@ import {
   getPluginSettingsFromRequest,
 } from '@lobehub/chat-plugin-sdk';
 import { SearchParameters, Settings } from '@/type';
+import { normalizeCategories } from '@/utils/normalizeCategories';
 
 export async function POST(req: NextRequest) {
   try {
@@ -29,7 +30,7 @@ export async function POST(req: NextRequest) {
     const { categories, q, time_range } = (await req.json()) as SearchParameters;
 
     const searchParameters: SearchParameters = {
-      ...(categories ? { categories: categories.join(',') } : {}),
+      ...(categories ? { categories: normalizeCategories(categories) } : {}),
       format: 'json',
       q,
       ...(time_range ? { time_range } : {}),
