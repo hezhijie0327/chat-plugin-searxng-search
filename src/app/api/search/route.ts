@@ -5,7 +5,7 @@ import {
   getPluginSettingsFromRequest,
 } from '@lobehub/chat-plugin-sdk';
 import { SearchParameters, Settings } from '@/type';
-import { normalizeCategories } from '@/utils';
+import { normalizeCategories } from '@/utils/normalizeCategories';
 
 export async function POST(req: NextRequest) {
   try {
