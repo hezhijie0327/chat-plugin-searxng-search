@@ -6,7 +6,7 @@ import {
 } from '@lobehub/chat-plugin-sdk';
 import { SearchParameters, Settings } from '@/type';
 
-export const normalizeCategories = (categories?: string | string[]): string | undefined => {
+const normalizeCategories = (categories?: string | string[]): string | undefined => {
   if (!categories) return undefined;
   if (typeof categories === 'string') {
     try {
