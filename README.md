@@ -13,12 +13,28 @@
    ```
 3. 打开浏览器并访问 `http://localhost:8080`，即可使用 SearXNG 搜索。
 4. 注：需要在配置中启用 `json` 返回才能使用以下功能，可参考官方配置文件 [Use Default Settings](https://docs.searxng.org/admin/installation-searxng.html#use-default-settings-yml)
-```
-  formats:
-    - html
-    - json
-```
-
+   ```
+     formats:
+       - html
+       - json
+   ```
+5. **实验性** BM25 结果排序优化（搜索结果将更与所查询的内容匹配）
+   ```bash
+   docker run --name searxng \
+       -p 8080:8888 \
+       -d hezhijie0327/searxng:latest
+   ```
+   ```
+   enabled_plugins:
+     - 'BM25 Rerank Plugin'
+   
+   search:
+     autocomplete: "custom"
+     autocomplete_engines:
+       - baidu
+       - duckduckgo
+       - google
+   ```
 
 
 ## 安装 SearXNG Search Plugin for LobeChat
