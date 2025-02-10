@@ -25,11 +25,13 @@
        -d hezhijie0327/searxng:latest
    ```
    ```
+   # BM25 排序插件（默认启用）
    enabled_plugins:
      - 'BM25 Rerank Plugin'
-   
+
+   # BM25 对 Autocomplete 结果排序，并支持多选来源
    search:
-     autocomplete: "custom"
+     autocomplete: "custom" # 新增 custom, all；当为 custom 时，autocomplete_engines 可用
      autocomplete_engines:
        - baidu
        - duckduckgo
