@@ -1,0 +1,19 @@
+services:
+  searxng:
+    image: hezhijie0327/searxng:latest
+    container_name: searxng
+    ports:
+      - "8080:8888"
+    environment:
+      - SEARXNG_SETTINGS_PATH=/app/searx/settings.yml
+    restart: unless-stopped
+  lobe_plugin:
+    image: hezhijie0327/lobechat:searxng
+    container_name: searxng_lobe_plugin
+    ports:
+      - "3000:3000"
+    environment:
+      - HOSTNAME=0.0.0.0
+      - PORT=3000
+      - PRODUCTION_URL=http://localhost:3000
+    restart: unless-stopped
