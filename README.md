@@ -1,3 +1,6 @@
+> 📝 **提示**  
+> 本项目中所有功能已在 `LobeChat PR #6813` 提交，待合并后可直接使用内建搜索功能
+
 # SearXNG Search Plugin for LobeChat 使用指南
 
 ## 安装 SearXNG
@@ -25,6 +28,11 @@
        -d hezhijie0327/searxng:latest
    ```
    ```
+   # 镜像中支持其他未并入主线的搜索引擎，如
+    - Quark
+    - Niconico
+    - 最新 Patch 信息可在 DockerimageBuilder 库中查看
+
    # BM25 排序插件（默认启用）
    enabled_plugins:
      - 'BM25 Rerank Plugin'
