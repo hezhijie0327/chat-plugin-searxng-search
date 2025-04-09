@@ -1,5 +1,5 @@
 > 📝 **提示**  
-> 本项目中所有功能已在 `LobeChat PR #6813` 提交，待合并后可直接使用内建搜索功能
+> 本项目中所有功能已在 `LobeChat PR #6813` 提交，~~待合并~~ 已并入主线，可直接使用内建搜索功能
 
 # SearXNG Search Plugin for LobeChat 使用指南
 
