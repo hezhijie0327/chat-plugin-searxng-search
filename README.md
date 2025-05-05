@@ -29,8 +29,9 @@
    ```
    ```
    # 镜像中支持其他未并入主线的搜索引擎，如
-    - Quark
-    - Niconico
+    - ChP (药典)
+    - XiaoHongShu (小红书)
+    - Naver
     - 最新 Patch 信息可在 DockerimageBuilder 库中查看
 
    # BM25 排序插件（默认启用）
