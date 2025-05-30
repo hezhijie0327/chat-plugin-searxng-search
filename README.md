@@ -39,9 +39,6 @@
      # BM25 结果排序优化（搜索结果将更与所查询的内容匹配）
      searx.plugins.bm25_rerank.SXNGPlugin:
        active: true
-     # 结果按域名过滤（搜索结果中仅返回来自指定的域名）
-     searx.plugins.site_filter.SXNGPlugin:
-       active: true
 
    # BM25 对 Autocomplete 结果排序，并支持多选来源
    search:
