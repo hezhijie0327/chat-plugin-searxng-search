@@ -32,11 +32,13 @@
     - ChP (药典)
     - XiaoHongShu (小红书)
     - PubMed（支持 API Key，释放 Rate Limited）
+    - Google PSE
+    - Brave Search API
     - 最新 Patch 信息可在 DockerimageBuilder 库中查看
 
    # 自定义插件（默认启用）
    plugins:
-     # 高级搜索结果过滤语法（`site:github.com` `-site:github.com` `"search phrase"` `keyword1 OR keyword2` `-unwanted` `-"unwanted phrase"` `intitle:keyword` `inurl:keyword` `intext:keyword`）
+     # 高级搜索结果过滤语法（`site:github.com` `-site:github.com` `"search phrase"` `keyword1 && keyword2` `keyword1 || keyword2` `-unwanted` `-"unwanted phrase"` `intitle:keyword` `inurl:keyword` `intext:keyword` `keyword*`）
      searx.plugins.advanced_search_syntax.SXNGPlugin:
        active: true
      # BM25 结果排序优化（搜索结果将更与所查询的内容匹配）
