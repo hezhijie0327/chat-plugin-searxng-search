@@ -12,7 +12,7 @@ LobeChat 的 SearXNG 元搜索插件：通过自建 SearXNG 实例聚合多个�
 - **元搜索聚合**：经 SearXNG 聚合多引擎结果，不追踪用户
 - **参数可控**：搜索类别（general/news/images/science 等）、时间范围、最大结果数
 - **自建友好**：Docker 多架构镜像（amd64/arm64），compose 一键起 SearXNG + 插件
-- **ZJSearch 镜像（实验性）**：`hezhijie0327/zjsearch` 不只是 SearXNG 增强版——它是带 zjsearch React 主题与 **AI 研究助手（DeepResearch）** 的 SearXNG fork，另支持药典 ChP、小红书、PubMed API、Google PSE、Brave Search API，内置高级搜索语法与 BM25 排序插件
+- **ZJSearch 镜像（实验性）**：`hezhijie0327/zjsearch` 不只是 SearXNG 增强版——它是带 ZJSearch React 主题与 **AI 研究助手（DeepResearch）** 的 SearXNG fork，另支持药典 ChP、小红书、PubMed API、Google PSE、Brave Search API，内置高级搜索语法与 BM25 排序插件
 
 ## 快速开始
 
@@ -78,7 +78,7 @@ pnpm build
 
 ### ZJSearch 镜像（实验性）
 
-[ZJSearch](https://github.com/hezhijie0327/ZJSearch) 是 SearXNG 的 fork：zjsearch React 主题 + AI 研究助手（DeepResearch），不只是增强版 SearXNG。
+[ZJSearch](https://github.com/hezhijie0327/ZJSearch) 是 SearXNG 的 fork：ZJSearch React 主题 + AI 研究助手（DeepResearch），不只是增强版 SearXNG。
 
 ```bash
 docker run --name zjsearch -p 8080:8888 -d hezhijie0327/zjsearch:latest

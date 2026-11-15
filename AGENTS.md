@@ -147,7 +147,7 @@ Plugin settings (configured in LobeChat UI): `SEARXNG_INSTANCE_URL` (required), 
 - `categories` arrives as an array or a JSON-encoded string from different LobeChat versions — `normalizeCategories()` handles both; keep it.
 - `PRODUCTION_URL` env must match the public URL LobeChat reaches (manifest/gateway URLs are rewritten from it at runtime).
 - Behind a reverse proxy on the same main domain as LobeChat, rewrite `/searxng-search/manifest.json`, `/searxng-search/api/gateway`, `/searxng-search/api/search`.
-- The companion image is **ZJSearch** (`hezhijie0327/zjsearch`, repo [hezhijie0327/ZJSearch](https://github.com/hezhijie0327/ZJSearch)) — not just an enhanced SearXNG: a SearXNG fork with the zjsearch React theme and an AI research agent (DeepResearch), plus extra engines (ChP, XiaoHongShu, PubMed API, Google PSE, Brave) and plugins (advanced search syntax, BM25 rerank). Patches live in the DockerimageBuilder repo.
+- The companion image is **ZJSearch** (`hezhijie0327/zjsearch`, repo [hezhijie0327/ZJSearch](https://github.com/hezhijie0327/ZJSearch)) — not just an enhanced SearXNG: a SearXNG fork with the ZJSearch React theme and an AI research agent (DeepResearch), plus extra engines (ChP, XiaoHongShu, PubMed API, Google PSE, Brave) and plugins (advanced search syntax, BM25 rerank). Patches live in the DockerimageBuilder repo.
 
 ## Key Docs
 
